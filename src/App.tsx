@@ -1,10 +1,12 @@
-import { Home } from "./pages/Home/Home";
+import { Header } from "./components/Header/Header";
+import { MainRoutes } from "./routes/MainRoutes";
 
 function App() {
 	return (
-		<div>
-			<Home />
-		</div>
+		<>
+			<Header />
+			<MainRoutes />
+		</>
 	);
 }
 
