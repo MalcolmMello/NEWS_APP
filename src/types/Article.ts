@@ -1,7 +1,7 @@
 export interface Article {
     copyright: string,
     num_results: string,
-    results: [{
+    results: {
         section: string,
         subsection: string,
         title: string,
@@ -17,5 +17,5 @@ export interface Article {
             copyright: string
         }],
         short_url: string
-    }]
+    }[]
 }
