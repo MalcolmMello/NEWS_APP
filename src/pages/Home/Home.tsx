@@ -52,6 +52,7 @@ export const Home = () => {
                         day={getDay}
                         year={getYear}
                         picture={thirdResults?.multimedia[1].url}
+                        marginTop={true}
                     />
                 </aside>
             </section>

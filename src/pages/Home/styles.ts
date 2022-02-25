@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const Home = styled.main`
     .container {
         display: grid;
-        padding: 40px 0px;
-        grid-template-columns: repeat(2, 1fr);
+        padding: 60px 0px;
+        grid-template-columns: 2fr 1fr;
         grid-gap: 20px;
         width: 1024px;
         margin: auto;

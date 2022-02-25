@@ -16,6 +16,9 @@ export const LeftArticle = styled.a<{mainBackground: string | undefined}>`
         .article--content {
             background: linear-gradient(180deg, rgba(0,0,0, 0) 0%, rgba(0,0,0,1) 90%);
             padding: 10px;
+            p {
+                margin: 0
+            }
         }
     }
 `

@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-export const RightArticle = styled.a<{mainBackground: string | undefined}>`
+export const RightArticle = styled.a<{mainBackground: string | undefined, marginTop: boolean | undefined}>`
+    height: 100%;
     width: max-content;
     text-decoration: none;
+    margin-top: ${props => props.marginTop ? '10px' : ''};
     .main--picture {
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
-        height: 200px;
-        width: 250px;
-        margin-top: 5px;
+        height: 100%;
+        width: 350px;
         background-image: url(${props => props.mainBackground});
         background-position: center;
         background-size: cover;

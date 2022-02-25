@@ -7,12 +7,14 @@ interface RightArticle {
     month: string | undefined,
     day: string | undefined,
     year: string | undefined,
-    picture: string | undefined
+    picture: string | undefined,
+    marginTop?: boolean
 }
 
-export const RightArticle = ({short_url, subsection, title, month, day, year, picture}: RightArticle) => {
+export const RightArticle = ({short_url, subsection, title, month, day, year, picture, marginTop}: RightArticle) => {
+    
     return (
-        <C.RightArticle href={short_url} target='_blank' mainBackground={picture}>
+        <C.RightArticle href={short_url} target='_blank' mainBackground={picture} marginTop={marginTop}>
             <article className='main--picture'>
                 <div className='article--content'>
                     <p>{subsection?.toUpperCase()}</p>
