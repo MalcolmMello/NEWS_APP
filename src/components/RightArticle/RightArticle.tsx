@@ -1,23 +1,23 @@
 import * as C from './styles'
 
-interface RightArticle {
-    short_url: string | undefined,
-    subsection: string | undefined,
-    title: string | undefined,
-    month: string | undefined,
-    day: string | undefined,
-    year: string | undefined,
-    picture: string | undefined,
+interface RightArticleTS {
+    short_url: string,
+    subsection: string,
+    title: string,
+    month: string,
+    day: string,
+    year: string,
+    picture: string,
     marginTop?: boolean
 }
 
-export const RightArticle = ({short_url, subsection, title, month, day, year, picture, marginTop}: RightArticle) => {
+export const RightArticle = ({short_url, subsection, title, month, day, year, picture, marginTop}: RightArticleTS) => {
     
     return (
         <C.RightArticle href={short_url} target='_blank' mainBackground={picture} marginTop={marginTop}>
-            <article className='main--picture'>
+            <div className='main--picture'>
                 <div className='article--content'>
-                    <p>{subsection?.toUpperCase()}</p>
+                    <p>{subsection.toUpperCase()}</p>
                     <h5>{title}</h5>
                     <div className='published--data'>
                         <small>
@@ -25,7 +25,7 @@ export const RightArticle = ({short_url, subsection, title, month, day, year, pi
                         </small>
                     </div>
                 </div>
-            </article>
+            </div>
         </C.RightArticle>
     )
 }
