@@ -9,13 +9,13 @@ export interface Article {
         url: string,
         byline: string,
         published_date: string,
-        multimedia: [{
+        multimedia:{
             url: string,
             height: string,
             width: string,
             caption: string,
             copyright: string
-        }],
+        }[],
         short_url: string
     }[]
 }

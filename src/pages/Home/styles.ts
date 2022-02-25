@@ -5,15 +5,15 @@ export const Home = styled.main`
         display: grid;
         padding: 40px 0px;
         grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
         width: 1024px;
         margin: auto;
         
         .aside--pictures {
             display: flex;
             flex-direction: column;
-            img {
-                width: 100%
-            }
+            align-items: flex-end;
+            justify-content: space-between
         }
     }
 `
