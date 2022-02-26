@@ -1,9 +1,9 @@
 export const formatDay = (time: Date) => {
-    return time.getDay() < 10 ? `0${time.getDay()}` : `${time.getDay()}`
+    return time.getUTCDate() < 10 ? `0${time.getUTCDate()}` : `${time.getUTCDate()}`
 }
 export const formatMonth = (time: Date) => {
-    return time.getMonth() < 10 ? `0${time.getMonth()}` : `${time.getMonth()}`
+    return time.getUTCMonth() < 10 ? `0${time.getUTCMonth()+1}` : `${time.getUTCMonth()+1}`
 }
 export const formatYear = (time: Date) => {
-    return time.getFullYear().toString()
+    return time.getUTCFullYear().toString()
 }

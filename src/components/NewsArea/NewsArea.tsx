@@ -1,6 +1,10 @@
 import * as C from './styles'
+import { useGetHomeNewsQuery } from '../../api/NewsApi'
+
 
 export const NewsArea = () => {
+    const { data } = useGetHomeNewsQuery('arg')   
+
     return (
         <C.NewsArea>
             <article>

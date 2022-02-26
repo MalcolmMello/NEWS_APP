@@ -2,8 +2,25 @@ import * as C from './styles'
 import { Link } from 'react-router-dom'
 import newsimg from '../../assets/news.png'
 
+interface Menu {
+    pathName: string,
+    path: string
+}
+
 export const Header = () => {
-    
+    const menu = [
+        {pathName: 'Home', path:'/'},
+        {pathName: 'Business', path:'/Business'},
+        {pathName: 'Politics', path:'/Politics'},
+        {pathName: 'Technology', path:'/Technology'},
+    ]
+
+    const renderMenu = (item: Menu) => (
+        <Link key={item.pathName} to={item.path}>
+            {item.pathName}
+        </Link>
+    )
+
     return (
         <C.Header>
             <div className='container'>
@@ -12,11 +29,7 @@ export const Header = () => {
                 </div>
                 <nav className='menu--area'>
                     <ul>
-                        <li>
-                            <Link to="/">
-                                Home
-                            </Link>
-                        </li>
+                        {menu.map(renderMenu)}
                     </ul>
                 </nav>
             </div>

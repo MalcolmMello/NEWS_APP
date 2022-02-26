@@ -25,6 +25,9 @@ export const RightArticle = styled.a<{mainBackground: string | undefined, margin
             p {
                 font-size: 12px
             }
+            small {
+                font-size: 12px
+            }
         }
     }
 `

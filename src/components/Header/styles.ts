@@ -30,12 +30,10 @@ export const Header = styled.header`
                 list-style: none;
                 padding: 0px;
                 margin: 0px;
-                li {
+                a {
                     margin: 0px 50px 0px 0px;
-                    a {
-                        text-decoration: none;
-                        color: #777
-                    }
+                    text-decoration: none;
+                    color: #777
                 }
             }
         }
