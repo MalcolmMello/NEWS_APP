@@ -1,44 +1,51 @@
 import * as C from './styles'
 import { useGetHomeNewsQuery } from '../../api/NewsApi'
+import { ArticleResults } from '../../types/Article'
 import { LeftArticle } from '../../components/LeftArticle/LeftArticle'
 import { RightArticle } from '../../components/RightArticle/RightArticle'
 
 export const TopHome = () => {
-    const { data } = useGetHomeNewsQuery('arg')   
+    const { data } = useGetHomeNewsQuery('arg')
+    const firstResult = data?.results[0]
 
-    const firstResults = data?.results[0]
-    const secondResults = data?.results[1]
-    const thirdResults = data?.results[2]
+    const renderLeftArticle = () => {
+        if(firstResult) {
+            return (
+                <LeftArticle
+                    key={firstResult.title}
+                    short_url={firstResult.short_url}
+                    subsection={firstResult.subsection}
+                    title={firstResult.title}
+                    picture={firstResult.multimedia[0].url}
+                    published_date={firstResult.published_date}
+                />
+            )
+        }
+    }
     
-    const allResults = firstResults && secondResults && thirdResults
-    
+    const renderRightArticle = (item: ArticleResults, i: any) => {
+        return (
+            <RightArticle
+                key={item.title}
+                short_url={item.short_url}
+                subsection={item.subsection}
+                title={item.title}
+                picture={item.multimedia[1].url}
+                published_date={item?.published_date}
+                marginTop={i === 1 ? true : false}
+            />
+        )
+    }
+
     return (
         <C.TopHome>
-            {allResults ? (
+            {data ? (
                 <>
-                    <LeftArticle
-                        short_url={firstResults.short_url}
-                        subsection={firstResults.subsection}
-                        title={firstResults.title}
-                        picture={firstResults.multimedia[0].url}
-                        published_date={firstResults?.published_date}
-                    />
+                    <article>
+                        {renderLeftArticle()}
+                    </article>
                     <aside className='aside--pictures'>
-                        <RightArticle
-                            short_url={secondResults.short_url}
-                            subsection={secondResults.subsection}
-                            title={secondResults.title}
-                            picture={secondResults.multimedia[1].url}
-                            published_date={secondResults?.published_date}
-                        />
-                        <RightArticle
-                            short_url={thirdResults.short_url}
-                            subsection={thirdResults.subsection}
-                            title={thirdResults.title}
-                            picture={thirdResults.multimedia[1].url}
-                            published_date={thirdResults?.published_date}
-                            marginTop={true}
-                        />
+                        {data.results.slice(1, 3).map(renderRightArticle)}
                     </aside>
                 </>
             ) : (

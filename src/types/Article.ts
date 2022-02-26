@@ -19,3 +19,21 @@ export interface Article {
         short_url: string
     }[]
 }
+
+export interface ArticleResults {
+    section: string,
+    subsection: string,
+    title: string,
+    abstract: string,
+    url: string,
+    byline: string,
+    published_date: string,
+    multimedia:{
+        url: string,
+        height: string,
+        width: string,
+        caption: string,
+        copyright: string
+    }[],
+    short_url: string
+}
