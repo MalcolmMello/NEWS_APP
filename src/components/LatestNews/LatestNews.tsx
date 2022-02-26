@@ -38,10 +38,10 @@ export const LatestNews = () => {
             <h1>Latest News</h1>
             <div className='content--area'>
                <article>
-                    {data?.results.slice(3, 6).map(renderLeftLatestNews)}
+                    {data?.results.slice(3, 7).map(renderLeftLatestNews)}
                </article>
                 <aside>
-                    {data?.results.slice(7, 13).map(renderRightLatestNews)}
+                    {data?.results.slice(7, 15).map(renderRightLatestNews)}
                 </aside> 
             </div>
         </C.LatestNews>

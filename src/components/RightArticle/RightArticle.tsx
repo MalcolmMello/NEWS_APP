@@ -19,7 +19,7 @@ export const RightArticle = ({short_url, subsection, title, picture, published_d
 
     return (
         <C.RightArticle href={short_url} target='_blank' mainBackground={picture} marginTop={marginTop}>
-            <div className='main--picture'>
+            <div className='background--picture'>
                 <div className='article--content'>
                     <p>{subsection.toUpperCase()}</p>
                     <h5>{title}</h5>

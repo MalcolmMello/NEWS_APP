@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const LatestNews = styled.article`
+    border-right: 1px solid #CCC;
+    padding-right: 10px;
     h1 {
         font-size: 23px
     }

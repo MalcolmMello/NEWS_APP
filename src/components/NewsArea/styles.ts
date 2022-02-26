@@ -6,6 +6,7 @@ export const NewsArea = styled.section`
     grid-gap: 20px;
     width: 1024px;
     margin: auto;
+    border-top: 1px solid #CCC;
     h1 {
         font-size: 23px
     }

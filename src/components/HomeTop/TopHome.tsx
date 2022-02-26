@@ -41,7 +41,7 @@ export const TopHome = () => {
         <C.TopHome>
             {data ? (
                 <>
-                    <article>
+                    <article className='main--picture'>
                         {renderLeftArticle()}
                     </article>
                     <aside className='aside--pictures'>

@@ -7,7 +7,9 @@ export const TopHome = styled.section`
     grid-gap: 20px;
     width: 1024px;
     margin: auto;
-
+    .main--picture {
+        padding-right: 10px;
+    }
     .aside--pictures {
         display: flex;
         flex-direction: column;

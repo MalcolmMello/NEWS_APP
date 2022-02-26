@@ -5,7 +5,7 @@ export const RightArticle = styled.a<{mainBackground: string | undefined, margin
     width: max-content;
     text-decoration: none;
     margin-top: ${props => props.marginTop ? '10px' : ''};
-    .main--picture {
+    .background--picture {
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
