@@ -24,4 +24,14 @@ export const MostComponent = styled.div`
             font-size: 12px;
         }
     }
+
+    @media(max-width: 500px) {
+        a {
+            display: block;
+            p {
+                display: block;
+                margin: 10px 0px
+            }
+        }
+    }
 `

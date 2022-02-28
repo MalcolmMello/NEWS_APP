@@ -38,4 +38,11 @@ export const Header = styled.header`
             }
         }
     }
+
+    @media(max-width: 1024px) {
+        .container {
+            width: 100%;
+            padding: 5px;
+        }
+    }
 `

@@ -14,4 +14,27 @@ export const LatestNews = styled.article`
             height: 100%
         }
     }
+
+    @media(max-width: 880px) {
+        .content--area {
+            grid-template-columns: 2fr 1fr; 
+        }
+    }
+    
+    @media(max-width: 580px) {
+        .content--area {
+            grid-template-columns: 1fr; 
+        }
+        aside {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            grid-gap: 20px
+        }
+    }
+
+    @media(max-width: 400px) {
+        aside {
+            grid-template-columns: 1fr; 
+        }
+    }
 `

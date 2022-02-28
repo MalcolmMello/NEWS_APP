@@ -10,4 +10,13 @@ export const NewsArea = styled.section`
     h1 {
         font-size: 23px
     }
+
+    @media(max-width: 1024px) {
+        width: 100%;
+        padding: 5px;
+    }
+
+    @media(max-width: 880px) {
+        grid-template-columns: 1fr; 
+    }
 `

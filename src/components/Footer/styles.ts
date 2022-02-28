@@ -10,5 +10,9 @@ export const Footer = styled.footer`
         font-size: 13px
     }
     height: 100px;
-
+    @media(max-width: 430px) {
+        p {
+            font-size: 11px
+        }
+    }
 `
