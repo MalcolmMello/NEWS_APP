@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const MostComponent = styled.div`
-    margin-bottom: 20px;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 20px;
+    margin-top: 10px;
     a {
         height: 100%;
         display: flex;
@@ -11,7 +13,6 @@ export const MostComponent = styled.div`
             margin: 5px 0px
         }
         p {
-            font-size: 15px;
             margin: 0px 10px 0px 0px;
             font-weight: bold
         }   

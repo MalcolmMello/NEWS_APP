@@ -3,7 +3,7 @@ import { Article } from '../types/Article'
 import { MostViewed } from '../types/MostViewed'
 
 const newsApiParams = {
-    'api-key': 'AChE2yA8AIHmP5fGj5GoUj4vd1hdaozc'
+    'api-key': process.env.REACT_NYT_APIKEY as string
 }
 
 const baseUrl = 'https://api.nytimes.com/svc'

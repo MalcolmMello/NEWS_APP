@@ -14,7 +14,7 @@ export const MostComponent = ({title, section, url, published_date, position}: M
            <a href={url} target='_blank'>
                 <p>{position < 10 ? `0${position}` : position}</p>
                 <div>
-                    <span>{section}</span>
+                    <span>{section.toUpperCase()}</span>
                     <h5>{title}</h5>
                     <small>{published_date}</small>
                 </div>

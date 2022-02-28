@@ -7,7 +7,7 @@ import { ArticleResults } from '../../types/Article'
 export const LatestNews = () => {
     const { data } = useGetHomeNewsQuery('arg')   
     
-    const renderLeftLatestNews = (item: ArticleResults, i: any) => (
+    const renderLeftLatestNews = (item: ArticleResults) => (
         <LeftNews
             key={item.title}
             url={item.url}
