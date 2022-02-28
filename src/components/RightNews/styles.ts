@@ -28,7 +28,7 @@ export const RightNews = styled.div`
         line-height: 27px;
         margin-bottom: 15px
     }
-    @media(max-width: 400px) {
+    @media(max-width: 450px) {
         height: auto;
         h5 {
             font-size: 17px;

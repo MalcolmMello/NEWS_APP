@@ -19,7 +19,7 @@ export const TopHome = styled.section`
 
     @media(max-width: 1024px) {
         width: 100%;
-        padding: 5px
+        padding: 30px 5px
     }
 
     @media(max-width: 1024px) {
@@ -43,9 +43,6 @@ export const TopHome = styled.section`
        }
     }
     @media(max-width: 530px) {
-        .main--picture {
-            height: 230px
-        }
         .aside--pictures {
             grid-template-columns: 1fr;
             margin-top: 10px

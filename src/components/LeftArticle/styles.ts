@@ -21,4 +21,10 @@ export const LeftArticle = styled.a<{mainBackground: string | undefined}>`
             }
         }
     }
+
+    @media(max-width: 530px) {
+        .main--picture {
+            height: 230px;
+        }
+    }
 `

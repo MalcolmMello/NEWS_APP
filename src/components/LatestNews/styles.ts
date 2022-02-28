@@ -32,7 +32,7 @@ export const LatestNews = styled.article`
         }
     }
 
-    @media(max-width: 400px) {
+    @media(max-width: 450px) {
         aside {
             grid-template-columns: 1fr; 
         }
