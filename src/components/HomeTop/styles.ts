@@ -25,9 +25,13 @@ export const TopHome = styled.section`
     @media(max-width: 1024px) {
         grid-template-columns: 1fr;
         .aside--pictures {
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            max-width: 100vw;
         }
         .main--picture {
+            max-width: 100vw;
             padding: 0px;
         }
     }
@@ -36,11 +40,6 @@ export const TopHome = styled.section`
         .main--picture {
             max-width: 100vw
         }
-       .aside--pictures {
-           display: grid;
-           grid-template-columns: repeat(2, 1fr);
-           grid-gap: 20px;
-       }
     }
     @media(max-width: 530px) {
         .aside--pictures {

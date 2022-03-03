@@ -9,19 +9,20 @@ interface LeftNewsTS {
     title: string,
     abstract: string,
     published_date: string,
+    isSectionArea?: boolean
 }
 
-export const LeftNews = ({url, imgUrl, caption, subsection, title, abstract, published_date}: LeftNewsTS) => {
+export const LeftNews = ({url, imgUrl, caption, subsection, title, abstract, published_date, isSectionArea}: LeftNewsTS) => {
     const time = published_date !== undefined ? new Date(published_date) : new Date()
     const month = formatMonth(time)
     const day = formatDay(time)
     const year = formatYear(time)
     
     return (
-        <C.LeftNews>
+        <C.LeftNews isSec={isSectionArea}>
             <a href={url} target='_blank'>
                 <img src={imgUrl} alt={caption} />
-                <span>{subsection.toUpperCase()}</span>
+                {subsection && <span>{subsection.toUpperCase()}</span>}
                 <h1>{title}</h1>
                 <p>{abstract}</p>
                 <small>{`published in ${month}/${day}/${year}`}</small>

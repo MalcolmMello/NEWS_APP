@@ -17,10 +17,13 @@ export const newsApi = createApi({
         getHomeNews: builder.query<Article, string>({
             query: () => createRequest('/topstories/v2/home.json')
         }),
+        getNewsBySection: builder.query<Article, string>({
+            query: (section) => createRequest(`/topstories/v2/${section}.json`)
+        }),
         getMostViewed: builder.query<MostViewed, string>({
             query: () => createRequest('/mostpopular/v2/viewed/7.json')
         })
     })
 })
 
-export const { useGetHomeNewsQuery, useGetMostViewedQuery } = newsApi 
+export const { useGetHomeNewsQuery, useGetMostViewedQuery, useGetNewsBySectionQuery } = newsApi 

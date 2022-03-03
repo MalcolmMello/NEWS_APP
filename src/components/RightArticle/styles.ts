@@ -32,12 +32,10 @@ export const RightArticle = styled.a<{mainBackground: string | undefined, margin
     }
     
     @media(max-width: 1024px) {
+        width: 100%;
         min-height: 230px;
         .background--picture {
             width: 100%
         }
-    }
-    @media(max-width: 870px) {
-        width: 100%
     }
 `

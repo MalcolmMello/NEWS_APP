@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const RightNews = styled.div`
+export const RightNews = styled.div<{isSec: boolean | undefined}>`
     align-items: flex-end;
-    height: 250px;
+    height:  ${props => props.isSec ? '' : '250px'};
     margin-bottom: 25px;
     border-bottom: 1px solid #CCC;
     a {
@@ -16,17 +16,20 @@ export const RightNews = styled.div`
     }
     img {
         width: 100%;
-        height: 120px;
+        height: ${props => props.isSec ? '205px' : '120px'};
+        object-fit: cover
     }
     span {
         font-size: 14px
     }
     h5 {
-        margin: 5px 0px
+        font-size: ${props => props.isSec ? '17px' : 'auto'};
+        margin: ${props => props.isSec ? '0px' : '5px 0px'};;
     }
     p {
         line-height: 27px;
-        margin-bottom: 15px
+        margin-bottom: 15px;
+        font-size: 13px
     }
     @media(max-width: 450px) {
         height: auto;

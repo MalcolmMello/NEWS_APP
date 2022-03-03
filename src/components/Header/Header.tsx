@@ -9,7 +9,10 @@ interface Menu {
 
 export const Header = () => {
     const menu = [
-        {pathName: 'Home', path:'/'}
+        {pathName: 'Home', path:'/'},
+        {pathName: 'Business', path:'/Sections/business'},
+        {pathName: 'Politics', path:'/Sections/politics'},
+        {pathName: 'Technology', path:'/Sections/technology'}
     ]
 
     const renderMenu = (item: Menu) => (
