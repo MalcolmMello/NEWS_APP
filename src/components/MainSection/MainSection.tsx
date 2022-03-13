@@ -1,8 +1,8 @@
 import * as C from './styles'
-import { ArticleResults } from '../../types/Article'
 import { useGetNewsBySectionQuery } from '../../api/NewsApi'
-import { LeftNews } from '../LeftNews/LeftNews'
-import { RightNews } from '../RightNews/RightNews'
+import { ArticleResults } from '../../types/Article'
+import { LeftArticle } from '../../components/LeftArticle/LeftArticle'
+import { RightArticle } from '../../components/RightArticle/RightArticle'
 
 interface SectionProps {
     title: string
@@ -11,86 +11,50 @@ interface SectionProps {
 export const MainSection = ({title}: SectionProps) => {
     const { data } = useGetNewsBySectionQuery(title)   
     const firstResult = data?.results[0]
-    const secondResult = data?.results[1]
 
-    const renderLeftNews = () => {
+    const renderLeftArticle = () => {
         if(firstResult) {
             return (
-                <LeftNews
+                <LeftArticle
                     key={firstResult.title}
-                    url={firstResult.url}
-                    imgUrl={firstResult.multimedia[0].url}
-                    caption={firstResult.multimedia[0].caption}
+                    short_url={firstResult.short_url}
                     subsection={firstResult.subsection}
                     title={firstResult.title}
-                    abstract={firstResult.abstract}
+                    picture={firstResult.multimedia[0].url}
                     published_date={firstResult.published_date}
-                    isSectionArea={true}
                 />
             )
         }
     }
-
-    const renderRightNews = () => {
-        if(secondResult) {
-            return (
-                <RightNews
-                    key={secondResult.title}
-                    url={secondResult.url}
-                    imgUrl={secondResult.multimedia[0].url}
-                    caption={secondResult.multimedia[0].caption}
-                    subsection={secondResult.subsection}
-                    title={secondResult.title}
-                    abstract={secondResult.abstract}
-                    published_date={secondResult.published_date}
-                    content={secondResult.abstract}
-                    isSectionArea={true}
-                />
-            )
-        }
-    }
-
-    const renderCenterNews = (item: ArticleResults, i: any) => {
-        if(i === 0) {
-            return (
-                <RightNews 
-                    key={item.title}
-                    url={item.url}
-                    caption={item.multimedia[0].caption}
-                    title={item.title}
-                    abstract={item.abstract}
-                    published_date={item.published_date}
-                    content={item.abstract}
-                    isSectionArea={true}
-                />
-            )
-        } if(i === 1) {
-            return (
-                <RightNews
-                    key={item.title}
-                    url={item.url}
-                    imgUrl={item.multimedia[0].url}
-                    caption={item.multimedia[0].caption}
-                    subsection={item.subsection}
-                    title={item.title}
-                    abstract={item.abstract}
-                    published_date={item.published_date}
-                    isSectionArea={true}
-                />
-            )
-        }
+    
+    const renderRightArticle = (item: ArticleResults, i: any) => {
+        return (
+            <RightArticle
+                key={item.title}
+                short_url={item.short_url}
+                subsection={item.subsection}
+                title={item.title}
+                picture={item.multimedia[1].url}
+                published_date={item?.published_date}
+                marginTop={i === 1 ? true : false}
+            />
+        )
     }
 
     return (
         <C.MainSection>
-            <h1>{title}</h1>
-            <div className='container'>
-                <div>{renderLeftNews()}</div>
-                <div>
-                    {data?.results.slice(2, 4).map(renderCenterNews)}
-                </div>
-                {renderRightNews()}
-            </div>
+            {data ? (
+                <>
+                    <article className='main--picture'>
+                        {renderLeftArticle()}
+                    </article>
+                    <aside className='aside--pictures'>
+                        {data.results.slice(1, 3).map(renderRightArticle)}
+                    </aside>
+                </>
+            ) : (
+                <div>Loading...</div>
+            )}
         </C.MainSection>
     )
 }

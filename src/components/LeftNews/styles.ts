@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export const LeftNews = styled.div<{isSec: boolean | undefined}>`
-    min-height: ${props => props.isSec ? '300px' : '500px'};
-    margin-bottom: ${props => props.isSec ? '10px' : '50px'};
-    border-bottom: 1px solid #CCC;
+export const LeftNews = styled.div`
+    background-color: white;
+    min-height: 500px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px -2px gray;
     padding-bottom: 15px;
     a {
         display: flex;
@@ -13,9 +15,11 @@ export const LeftNews = styled.div<{isSec: boolean | undefined}>`
         height: 100%;
         justify-content: space-between;
         padding-bottom: 10px;
+        padding: 7px
     }
     img {
         width: 100%;
+        border-radius: 3px;
         object-fit: cover
     }
     span {
@@ -23,12 +27,11 @@ export const LeftNews = styled.div<{isSec: boolean | undefined}>`
         font-size: 14px
     }
     h1 {
-        margin: ${props => props.isSec ? '0px' : '10px 10px 10px 0px'};
-        font-size: ${props => props.isSec ? '20px' : 'auto'};
+        margin: 10px 10px 10px 0px;
+        font-size: auto;
     }
     p {
         line-height: 27px;
         margin-bottom: 15px;
-        font-size: ${props => props.isSec ? '17px' : 'auto'};
     }
 `

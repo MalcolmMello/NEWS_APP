@@ -6,7 +6,7 @@ export const Footer = styled.footer`
     justify-content: center;
     align-items: center;
     border-top: 1px solid #CCC;
-    background-color: hsl(0, 0%, 96%);
+    background-color: white;
     p {
         font-size: 13px
     }

@@ -30,8 +30,9 @@ export const Header = styled.header`
                 list-style: none;
                 padding: 0px;
                 margin: 0px;
-                a {
-                    margin: 0px 50px 0px 0px;
+                a, li{
+                    margin: 0px;
+                    margin-right: 50px;
                     text-decoration: none;
                     color: #777
                 }
@@ -43,6 +44,26 @@ export const Header = styled.header`
         .container {
             width: 100%;
             padding: 5px;
+        }
+    }
+
+    @media(max-width: 530px) {
+        .container {
+            .menu--area {
+                ul {
+                    justify-content: space-around;
+                    li, a{
+                        font-size: 12px;
+                        margin: 0px
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 350px) {
+        a {
+            font-size: 10px
         }
     }
 `

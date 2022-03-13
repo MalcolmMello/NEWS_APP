@@ -1,13 +1,15 @@
 import * as C from './styles'
 import { LeftNews } from '../LeftNews/LeftNews'
 import { RightNews } from '../RightNews/RightNews'
-import { useGetHomeNewsQuery } from '../../api/NewsApi'
+import { useGetNewsBySectionQuery } from '../../api/NewsApi'
 import { ArticleResults } from '../../types/Article'
 
+interface LatestBySection {
+    title: string
+}
 
-export const LatestNews = () => {
-    const { data } = useGetHomeNewsQuery('arg')   
-    
+export const LatestBySection = ({title}: LatestBySection) => {
+    const { data } = useGetNewsBySectionQuery(title)   
     const renderLeftLatestNews = (item: ArticleResults) => (
         <LeftNews
             key={item.title}
@@ -35,16 +37,18 @@ export const LatestNews = () => {
     )
 
     return (    
-        <C.LatestNews>
-            <h1>Latest News</h1>
-            <div className='content--area'>
-               <article>
-                    {data?.results.slice(3, 7).map(renderLeftLatestNews)}
-               </article>
-                <aside>
-                    {data?.results.slice(7, 15).map(renderRightLatestNews)}
-                </aside> 
+        <C.LatestBySection>
+            <div className='container'>
+                <h1>Latest News</h1>
+                <div className='content--area'>
+                <article>
+                        {data?.results.slice(4, 7).map(renderLeftLatestNews)}
+                </article>
+                    <aside>
+                        {data?.results.slice(8, 16).map(renderRightLatestNews)}
+                    </aside> 
+                </div>
             </div>
-        </C.LatestNews>
+        </C.LatestBySection>
     )
 }

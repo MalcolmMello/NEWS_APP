@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const MostComponent = styled.div`
-    border-bottom: 1px solid #CCC;
-    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 2px 3px -2px gray;
+    border-radius: 10px;
+    padding: 10px;
     margin-top: 10px;
     a {
         height: 100%;

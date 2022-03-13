@@ -1,6 +1,6 @@
 import * as C from './styles'
 import { NewsArea } from '../../components/NewsArea/NewsArea'
-import { TopHome } from '../../components/HomeTop/TopHome'
+import { TopHome } from '../../components/TopHome/TopHome'
 
 
 export const Home = () => {

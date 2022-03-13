@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-export const RightNews = styled.div<{isSec: boolean | undefined}>`
+export const RightNews = styled.div`
+    background-color: white;
     align-items: flex-end;
-    height:  ${props => props.isSec ? '' : '250px'};
+    height: 250px;
     margin-bottom: 25px;
-    border-bottom: 1px solid #CCC;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px -2px gray;
+    padding: 7px;
     a {
         display: flex;
         flex-direction: column;
@@ -16,15 +19,20 @@ export const RightNews = styled.div<{isSec: boolean | undefined}>`
     }
     img {
         width: 100%;
-        height: ${props => props.isSec ? '205px' : '120px'};
+        height: 120px;
+        border-radius: 3px;
         object-fit: cover
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     span {
         font-size: 14px
     }
     h5 {
-        font-size: ${props => props.isSec ? '17px' : 'auto'};
-        margin: ${props => props.isSec ? '0px' : '5px 0px'};;
+        margin: 5px 0px;
     }
     p {
         line-height: 27px;
