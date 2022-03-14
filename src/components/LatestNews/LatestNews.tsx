@@ -1,4 +1,5 @@
 import * as C from './styles'
+import defaultimg from '../../assets/defaultimg.jpg'
 import { LeftNews } from '../LeftNews/LeftNews'
 import { RightNews } from '../RightNews/RightNews'
 import { useGetHomeNewsQuery } from '../../api/NewsApi'
@@ -12,7 +13,7 @@ export const LatestNews = () => {
         <LeftNews
             key={item.title}
             url={item.url}
-            imgUrl={item.multimedia[0].url}
+            imgUrl={item.multimedia ? item.multimedia[0].url : defaultimg}
             caption={item.multimedia[0].caption}
             subsection={item.subsection}
             title={item.title}
@@ -25,8 +26,8 @@ export const LatestNews = () => {
         <RightNews
             key={item.title}
             url={item.url}
-            imgUrl={item.multimedia[0].url}
-            caption={item.multimedia[0].caption}
+            imgUrl={item.multimedia ? item.multimedia[0].url : defaultimg}
+            caption={item.multimedia ? item.multimedia[0].caption : ''}
             subsection={item.subsection}
             title={item.title}
             abstract={item.abstract}

@@ -1,4 +1,5 @@
 import * as C from './styles'
+import defaultimg from '../../assets/defaultimg.jpg'
 import { LeftNews } from '../LeftNews/LeftNews'
 import { RightNews } from '../RightNews/RightNews'
 import { useGetNewsBySectionQuery } from '../../api/NewsApi'
@@ -14,8 +15,8 @@ export const LatestBySection = ({title}: LatestBySection) => {
         <LeftNews
             key={item.title}
             url={item.url}
-            imgUrl={item.multimedia[0].url}
-            caption={item.multimedia[0].caption}
+            imgUrl={item.multimedia ? item.multimedia[0].url : defaultimg}
+            caption={item.multimedia ? item.multimedia[0].caption : ''}
             subsection={item.subsection}
             title={item.title}
             abstract={item.abstract}
@@ -27,8 +28,8 @@ export const LatestBySection = ({title}: LatestBySection) => {
         <RightNews
             key={item.title}
             url={item.url}
-            imgUrl={item.multimedia[0].url}
-            caption={item.multimedia[0].caption}
+            imgUrl={item.multimedia ? item.multimedia[0].url : ''}
+            caption={item.multimedia ? item.multimedia[0].caption : ''}
             subsection={item.subsection}
             title={item.title}
             abstract={item.abstract}

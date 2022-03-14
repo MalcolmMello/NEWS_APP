@@ -2,7 +2,7 @@ import * as C from './styles'
 import { formatDay, formatMonth, formatYear } from '../../helpers/dataConfig'
 
 interface RightNewsTS {
-    imgUrl?: string,
+    imgUrl: string,
     url: string,
     caption: string,
     subsection?: string,
